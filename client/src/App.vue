@@ -1,12 +1,45 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <button @click="startQuiz">start</button>
+    <button @click="reset">reset</button>
+    <p>{{ quiz }}</p>
+    <p>{{ players }}</p>
+    <form @submit.prevent="daftar">
+      <input type="text" @submit.prevent="daftar" v-model="nama">
+    </form>
   </div>
 </template>
+
+<script>
+
+export default {
+  methods: {
+    startQuiz () {
+      this.$socket.emit('startGame')
+    },
+    daftar () {
+      this.$socket.emit('register', this.nama)
+      this.nama = ''
+    },
+    reset () {
+      this.$socket.emit('resetGame')
+    }
+  },
+  computed: {
+    quiz () {
+      return this.$store.state.quiz
+    },
+    players () {
+      return this.$store.state.players
+    }
+  },
+  data () {
+    return {
+      nama: ''
+    }
+  }
+}
+</script>
 
 <style>
 #app {
