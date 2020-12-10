@@ -1,18 +1,42 @@
 <template>
   <div class="loginPage">
     <div class="loginForm">
-      <form align="center" class="box">
+      <form align="center" class="box" @submit.prevent="changePage">
         <img src="https://lh3.googleusercontent.com/proxy/EmS_ZcMxk5kkZQsYL3QbEopjbj6bvl3vq0b5gk8KBFM2tGnYnoMSB_brVnzEoBuYnpgVXWOR0W_RG2XstyBKy_NaELWiAmxV5Oe97ZIC8SbrfHS-rj0faes" alt="">
         <h1>HELLO</h1>
-        <div class="input-username">
-          <input type="text" placeholder="USERNAME" name="username" class="usernameForm">
-          <br><br>
-          <input type="submit" name="" id="" class="loginBtn">
-        </div>
+        <input v-model="userName" type="text" placeholder="USERNAME" class="usernameForm" required>
+        <br><br>
+        <input type="submit" class="loginBtn">
       </form>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'loginPage',
+  data () {
+    return {
+      userName: ''
+    }
+  },
+  methods: {
+    changePage () {
+      localStorage.setItem('username', this.userName)
+      this.$router.push({ path: '/' })
+    }
+  },
+  created () {
+    if (localStorage.getItem('username')) {
+      this.$router.push({ path: '/' })
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>
 
 <style>
   .box {

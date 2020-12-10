@@ -2,7 +2,9 @@
   <div class="homePage">
     <img class="imgBackground1" src="https://lh3.googleusercontent.com/proxy/dgFu0Hmroy2uv_h7gGitdlphtCZFEcXAbUkODmbwFnIW2tCxt7BKylAvWmPXVvRIt2A0IC1JpBayiVNyUEYNIcZlPw9A6y0i3YS3NV-FjQh_CupAhvJd3Dfp3O82JNRaC3eZ3hDh">
     <div class="listPlayer  ">
+      <h3>hallo {{ name }}</h3>
       <h1>list player :</h1>
+      <p>andi,german,test</p>
       <h3>player: score</h3>
       <h2>timer</h2>
     </div>
@@ -15,7 +17,7 @@
         <h3>kalimat</h3>
       </div>
       <div>
-        <form class="answerForm">
+        <form class="answerForm" @submit.prevent="changePage">
           <input type="text" placeholder="your answer" name="username" class="answerForm">
           <br><br>
           <input type="submit" class="answerBtn">
@@ -32,16 +34,23 @@ export default {
   name: 'Home',
   data () {
     return {
-      name: '',
+      name: localStorage.getItem('username'),
       message: ''
     }
   },
-  // methods: {
-
-  // },
+  methods: {
+    changePage () {
+      this.$router.push({ path: '/winner' })
+    }
+  },
   sockets: {
     SendMsg (payload) {
       console.log(payload)
+    }
+  },
+  created () {
+    if (!localStorage.getItem('username')) {
+      this.$router.push({ path: '/login' })
     }
   }
 }
@@ -63,17 +72,9 @@ export default {
   .listPlayer {
      margin-left: -80%;
    }
-  .answerForm {
-    background: #191919;
-    text-align: center;
-    border-radius: 20px;
-    box-shadow: 5px 5px;
-    margin-left: 30%;
-    margin-right: 30%;
-  }
 
   .answerForm input[type = "text"] {
-    background: none;
+    background: black;
     display: block;
     margin: 250px auto;
     border: 2px solid #3498db;
@@ -92,7 +93,7 @@ export default {
 
   .answerForm input[type = "submit"] {
     border: 0;
-    background: none;
+    background: black;
     display: block;
     margin: -240px auto;
     border: 2px solid #2ecc71;
