@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/login">Click</router-link>
+      <router-link to="/login">Click</router-link> |
+      <router-link to="/winner">Winner</router-link>
     </div>
     <router-view/>
   </div>

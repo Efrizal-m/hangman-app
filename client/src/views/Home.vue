@@ -63,17 +63,9 @@ export default {
   .listPlayer {
      margin-left: -80%;
    }
-  .answerForm {
-    background: #191919;
-    text-align: center;
-    border-radius: 20px;
-    box-shadow: 5px 5px;
-    margin-left: 30%;
-    margin-right: 30%;
-  }
 
   .answerForm input[type = "text"] {
-    background: none;
+    background: black;
     display: block;
     margin: 250px auto;
     border: 2px solid #3498db;
@@ -92,7 +84,7 @@ export default {
 
   .answerForm input[type = "submit"] {
     border: 0;
-    background: none;
+    background: black;
     display: block;
     margin: -240px auto;
     border: 2px solid #2ecc71;
