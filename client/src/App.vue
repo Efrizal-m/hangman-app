@@ -1,12 +1,10 @@
 <template>
   <div id="app">
-    <button @click="startQuiz">start</button>
-    <button @click="reset">reset</button>
-    <p>{{ quiz }}</p>
-    <p>{{ players }}</p>
-    <form @submit.prevent="daftar">
-      <input type="text" @submit.prevent="daftar" v-model="nama">
-    </form>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/login">Click</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
 
