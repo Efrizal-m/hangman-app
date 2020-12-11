@@ -124,14 +124,6 @@ export default {
       } else {
         this.message = ''
       }
-    },
-    berdering () {
-      // aktifin suara
-    }
-  },
-  sockets: {
-    nyalainSuara () {
-      this.berdering()
     }
   }
 }

@@ -56,9 +56,6 @@ io.on('connection', (client) => {
     client.on('startRound', _=>{
         io.emit('startRound')
     })
-    client.on('suara', _=>{
-        io.emit('nyalainSuara')
-    })
     client.on('submitScore', payload=>{
         let index;
         for(let i = 0; i < players.length; i++){
