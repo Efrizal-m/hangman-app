@@ -63,11 +63,15 @@ io.on('connection', (client) => {
     })
     client.on('disconnect', _ =>{
         let i = allClient.indexOf(client)
-        let j = players.indexOf(client.pengenal)
+        let j;
+        players.forEach((el, i) =>{
+            if(el.nama == client.pengenal) j = i
+        })
         allClient.splice(i,1)
-        if(j > -1){
+        if(j != -1){
             players.splice(j,1)
         }
+        console.log(j);
         io.emit('player', players)
     })
 });
