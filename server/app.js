@@ -6,7 +6,7 @@ const PORT = 3000
 
 function fetchQuiz(){
     let out = []
-    for(let i = 0; i <= 4; i++){
+    for(let i = 0; i < 1; i++){
         let x = Math.floor(Math.random()*data.length)
         out.push(data[x])
     }
@@ -40,10 +40,10 @@ io.on('connection', (client) => {
             score: 0
         })
         io.emit('player', players)
-        client.emit('startGame', quiz)
     })
     client.on('resetGame', _=>{
         quiz = []
+        players = []
         io.emit('resetGame', quiz)
     })
     client.on('startGame', _=>{
@@ -60,6 +60,14 @@ io.on('connection', (client) => {
         }
         players[index].score = payload.score
         io.emit('player', players)
+        quiz = []
+        quiz = addAnswer(fetchQuiz())
+        io.emit('startGame', quiz)
+        if(payload.score === 30) {
+            io.emit('finishGame', {
+                nama: payload.nama
+            })
+        }
     })
     client.on('disconnect', _ =>{
         let i = allClient.indexOf(client)

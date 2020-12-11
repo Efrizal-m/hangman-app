@@ -6,20 +6,22 @@
       <h1>list player :</h1>
       <p>{{ players }}</p>
       <h3>player: score</h3>
-      <h2>timer</h2>
-      <h3>{{ timer }}</h3>
+      <h3 v-for="(el, i) in playerScore" :key="i">{{ el.nama }}: {{ el.score }}</h3>
+      <p style="display:none;">{{ timer }}</p>
+      <button @click="startGame">START GAME</button><br><br>
+      <button @click="resetGame">RESET GAME</button>
     </div>
 
     <div class="loginBox">
       <img class="imgBackground2" src="https://i.redd.it/qat3c8w7mfi51.gif">
       <div class="questionBox">
-        <h1>`benda ini kecil tapi tidak kelihatan`</h1>
+        <h1>`description: {{ quiz[0].desc }}`</h1>
         <br><br><br>
-        <h3>kalimat</h3>
+        <h3>kalimat:{{ quiz[0].test }} </h3>
       </div>
       <div>
-        <form class="answerForm" @submit.prevent="changePage">
-          <input type="text" placeholder="your answer" name="username" class="answerForm">
+        <form class="answerForm" @submit.prevent="cekJawaban">
+          <input type="text" placeholder="your answer" name="username" class="answerForm" v-model="message">
           <br><br>
           <input type="submit" class="answerBtn">
         </form>
@@ -35,40 +37,61 @@ export default {
   data () {
     return {
       name: localStorage.getItem('username'),
-      message: ''
+      message: '',
+      jawaban: '',
+      hasil: ''
     }
+  },
+  created () {
+    if (!localStorage.getItem('username')) {
+      this.$router.push({ path: '/login' })
+    } else {
+      this.$socket.emit('register', localStorage.getItem('username'))
+    }
+    this.startGame()
   },
   computed: {
     quiz () {
-      return this.$store.state.quiz
+      const out = this.$store.state.quiz
+      console.log(out, '<<<<dari quiz')
+      let a = ''
+      for (let i = 0; i < out[0].word.length; i++) {
+        if (out[0].word[i] !== out[0].shown) {
+          a += '*'
+        } else {
+          a += out[0].word[i]
+        }
+      }
+      out[0].test = a
+      console.log(out, '<<<<<< out setelah for')
+      return out
     },
     players () {
       const out = this.$store.state.players.map(el => el.nama)
       return out.join(',')
     },
+    playerScore () {
+      return this.$store.state.players
+    },
     namaPlayer () {
       return this.$store.state.nama
-    },
-    timer () {
-      return this.$store.state.timer
     },
     isStart () {
       if (this.$store.state.isStart) {
         this.start()
       }
       return this.$store.state.isStart
+    },
+    soalDanJawaban () {
+      const out = this.$store.getters.soalDanJawaban(1)
+      return out
+    },
+    timer () {
+      return this.$store.state.timer
     }
   },
   methods: {
-    start () {
-      while (this.$store.state.timer > 0) {
-        setInterval(() => {
-          this.$store.commit('timerDecrement')
-        }, 1000)
-      }
-    },
     startGame () {
-      this.start()
       this.$socket.emit('startGame')
     },
     resetGame () {
@@ -76,11 +99,23 @@ export default {
     },
     changePage () {
       this.$router.push({ path: '/winner' })
-    }
-  },
-  created () {
-    if (!localStorage.getItem('username')) {
-      this.$router.push({ path: '/login' })
+    },
+    cekJawaban () {
+      const ans = this.message // 1 huruf
+      const answer = this.$store.state.quiz[0].word // str
+      const nama = localStorage.getItem('username')
+      let score = this.$store.state.score
+      if (ans === answer) {
+        console.log('masuk jawaban benar')
+        score += 10
+        this.$store.commit('jawabanBenar', 10)
+        this.$socket.emit('submitScore', {
+          nama: nama,
+          score: score
+        })
+      } else {
+        this.message = ''
+      }
     }
   }
 }
@@ -89,7 +124,7 @@ export default {
 <style>
   .imgBackground1 {
     width: 700px;
-    margin-top: 100px;
+    margin-top: 600px;
     margin-left: -800px;
     position: absolute;
   }

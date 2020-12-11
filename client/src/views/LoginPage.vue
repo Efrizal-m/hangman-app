@@ -23,7 +23,6 @@ export default {
   methods: {
     changePage () {
       localStorage.setItem('username', this.userName)
-      this.$socket.emit('register', this.userName)
       this.$router.push({ path: '/' })
     }
   },
