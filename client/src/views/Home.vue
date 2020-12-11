@@ -1,18 +1,20 @@
 <template>
   <div class="homePage">
+    <audio autoplay="true">
+      <source src="audio/we-are.mp3" type="audio/mpeg">
+    </audio>
     <img class="imgBackground1" src="https://lh3.googleusercontent.com/proxy/dgFu0Hmroy2uv_h7gGitdlphtCZFEcXAbUkODmbwFnIW2tCxt7BKylAvWmPXVvRIt2A0IC1JpBayiVNyUEYNIcZlPw9A6y0i3YS3NV-FjQh_CupAhvJd3Dfp3O82JNRaC3eZ3hDh">
-    <div class="listPlayer  ">
-      <h3>hallo {{ name }}</h3>
-      <h1>list player :</h1>
-      <p>{{ players }}</p>
-      <h3>player: score</h3>
-      <h3 v-for="(el, i) in playerScore" :key="i">{{ el.nama }}: {{ el.score }}</h3>
-      <p style="display:none;">{{ timer }}</p>
-      <button @click="startGame">START GAME</button><br><br>
-      <button @click="resetGame">RESET GAME</button>
-    </div>
-
     <div class="loginBox">
+      <div class="listPlayer">
+        <h3>hallo {{ name }}</h3>
+        <h1>list player :</h1>
+        <p>{{ players }}</p>
+        <h3>player: score</h3>
+        <h3 v-for="(el, i) in playerScore" :key="i">{{ el.nama }}: {{ el.score }}</h3>
+        <p style="display:none;">{{ timer }}</p>
+        <button @click="startGame">START GAME</button><br><br>
+        <button @click="resetGame">RESET GAME</button>
+      </div>
       <img class="imgBackground2" src="https://i.redd.it/qat3c8w7mfi51.gif">
       <div class="questionBox">
         <h1>`description: {{ quiz[0].desc }}`</h1>
@@ -150,6 +152,7 @@ export default {
   }
   .listPlayer {
      margin-left: -80%;
+     z-index: 9999;
    }
 
   .answerForm input[type = "text"] {
