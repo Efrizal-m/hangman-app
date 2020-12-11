@@ -27,3 +27,5 @@ function WordQuiz (word) {
     }
     return character
 }
+
+module.exports = WordQuiz

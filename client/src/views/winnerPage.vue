@@ -3,7 +3,7 @@
       <div class="winnerBox">
         <h2>WE HAVE A WINNER!!!</h2>
         <h1>CONGRATULATIONS!!!</h1>
-        <p>name winner</p>
+        <p>{{ name }} is the winner!!!!</p>
         <button @click="changePage" class="backBtn">HOME</button>
       </div>
   </div>
@@ -13,8 +13,16 @@
 export default {
   methods: {
     changePage () {
-      this.$router.push({ path: '/' })
+      this.$socket.emit('resetGame')
     }
+  },
+  data () {
+    return {
+      name: ''
+    }
+  },
+  created () {
+    this.name = this.$route.params.name
   }
 }
 </script>

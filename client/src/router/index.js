@@ -14,7 +14,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/winner',
+    path: '/winner/:name',
     name: 'winner',
     component: winnerPage
   },
