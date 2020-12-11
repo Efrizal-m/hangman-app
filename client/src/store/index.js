@@ -33,6 +33,7 @@ export default new Vuex.Store({
         el.score = 0
         return el
       })
+      router.push('/')
       location.reload()
     },
     setName (state, payload) {

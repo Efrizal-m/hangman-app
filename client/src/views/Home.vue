@@ -113,6 +113,7 @@ export default {
           nama: nama,
           score: score
         })
+        this.message = ''
       } else {
         this.message = ''
       }
