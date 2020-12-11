@@ -23,18 +23,17 @@ export default {
   methods: {
     changePage () {
       localStorage.setItem('username', this.userName)
+      this.$socket.emit('register', this.userName)
       this.$router.push({ path: '/' })
     }
   },
   created () {
     if (localStorage.getItem('username')) {
       this.$router.push({ path: '/' })
-
     }
   }
 }
 </script>
-
 
 <style>
   .box {

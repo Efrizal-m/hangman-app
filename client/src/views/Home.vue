@@ -4,7 +4,7 @@
     <div class="listPlayer  ">
       <h3>hallo {{ name }}</h3>
       <h1>list player :</h1>
-      <p>andi,german,test</p>
+      <p>{{ players }}</p>
       <h3>player: score</h3>
       <h2>timer</h2>
       <h3>{{ timer }}</h3>
@@ -43,7 +43,8 @@ export default {
       return this.$store.state.quiz
     },
     players () {
-      return this.$store.state.players
+      const out = this.$store.state.players.map(el => el.nama)
+      return out.join(',')
     },
     namaPlayer () {
       return this.$store.state.nama
