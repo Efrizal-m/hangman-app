@@ -1,0 +1,282 @@
+[
+    {
+        "word":"laptop",
+        "desc":"a computer that is portable and suitable for use while traveling."
+    },
+    {
+        "word":"dictionary",
+        "desc":"a book or electronic resource that lists the words of a language (typically in alphabetical order) and gives their meaning, or gives the equivalent words in a different language, often also providing information about pronunciation, origin, and usage."
+    },
+    {
+        "word":"plate",
+        "desc":"a flat dish, typically circular and made of china, from which food is eaten or served."
+    },
+    {
+        "word":"bowl",
+        "desc":"a round, deep dish or basin used for food or liquid."
+    },
+    {
+        "word":"house",
+        "desc":"a building for human habitation, especially one that is lived in by a family or small group of people."
+    },
+    {
+        "word":"mosquito",
+        "desc":"a slender long-legged fly with aquatic larvae. The bite of the bloodsucking female can transmit a number of serious diseases including malaria and encephalitis."
+    },
+    {
+        "word":"elephant",
+        "desc":"a heavy plant-eating mammal with a prehensile trunk, long curved ivory tusks, and large ears, native to Africa and southern Asia. It is the largest living land animal."
+    },
+    {
+        "word":"referee",
+        "desc":"an official who watches a game or match closely to ensure that the rules are adhered to and (in some sports) to arbitrate on matters arising from the play."
+    },
+    {
+        "word":"board",
+        "desc":"a long, thin, flat piece of wood or other hard material, used for floors or other building purposes."
+    },
+    {
+        "word":"headache",
+        "desc":"a continuous pain in the head."
+    },
+    {
+        "word":"sleep",
+        "desc":"a condition of body and mind that typically recurs for several hours every night, in which the nervous system is relatively inactive, the eyes closed, the postural muscles relaxed, and consciousness practically suspended."
+    },
+    {
+        "word":"development",
+        "desc":"the process of developing or being developed."
+    },
+    {
+        "word":"mosque",
+        "desc":"a Muslim place of worship."
+    },
+    {
+        "word":"letter",
+        "desc":"a character representing one or more of the sounds used in speech; any of the symbols of an alphabet."
+    },
+    {
+        "word":"bargain",
+        "desc":"an agreement between two or more parties as to what each party will do for the other."
+    },
+    {
+        "word":"painting",
+        "desc":"the process or art of using paint, in a picture, as a protective coating, or as decoration."
+    },
+    {
+        "word":"water",
+        "desc":"a colorless, transparent, odorless liquid that forms the seas, lakes, rivers, and rain and is the basis of the fluids of living organisms."
+    },
+    {
+        "word":"mountain",
+        "desc":"a large natural elevation of the earth's surface rising abruptly from the surrounding level; a large steep hill."
+    },
+    {
+        "word":"bicycle",
+        "desc":"a vehicle composed of two wheels held in a frame one behind the other, propelled by pedals and steered with handlebars attached to the front wheel."
+    },
+    {
+        "word":"gravestone",
+        "desc":"an inscribed headstone marking a grave."
+    },
+    {
+        "word":"rectangle",
+        "desc":"a plane figure with four straight sides and four right angles, especially one with unequal adjacent sides, in contrast to a square."
+    },
+    {
+        "word":"circumstances",
+        "desc":"a fact or condition connected with or relevant to an event or action."
+    },
+    {
+        "word":"apologize",
+        "desc":"express regret for something that one has done wrong."
+    },
+    {
+        "word":"apocalypse",
+        "desc":"the complete final destruction of the world, as described in the biblical book of Revelation."
+    },
+    {
+        "word":"destruction",
+        "desc":"the action or process of causing so much damage to something that it no longer exists or cannot be repaired."
+    },
+    {
+        "word":"revelation",
+        "desc":"the divine or supernatural disclosure to humans of something relating to human existence or the world."
+    },
+    {
+        "word":"endurance",
+        "desc":"the fact or power of enduring an unpleasant or difficult process or situation without giving way."
+    },
+    {
+        "word":"necklace",
+        "desc":"an ornamental chain or string of beads, jewels, or links worn around the neck."
+    },
+    {
+        "word":"blade",
+        "desc":"the flat cutting edge of a knife, saw, or other tool or weapon."
+    },
+    {
+        "word":"despair",
+        "desc":"the complete loss or absence of hope."
+    },
+    {
+        "word":"clock",
+        "desc":"a mechanical or electrical device for measuring time, indicating hours, minutes, and sometimes seconds, typically by hands on a round dial or by displayed figures."
+    },
+    {
+        "word":"destiny",
+        "desc":"the events that will necessarily happen to a particular person or thing in the future."
+    },
+    {
+        "word":"battle",
+        "desc":"fight or struggle tenaciously to achieve or resist something."
+    },
+    {
+        "word":"guardian",
+        "desc":"a defender, protector, or keeper."
+    },
+    {
+        "word":"helmet",
+        "desc":"a hard or padded protective hat, various types of which are worn by soldiers, police officers, firefighters, motorcyclists, athletes, and others."
+    },
+    {
+        "word":"galaxy",
+        "desc":"a system of millions or billions of stars, together with gas and dust, held together by gravitational attraction."
+    },
+    {
+        "word":"stinky",
+        "desc":"having a strong or unpleasant smell."
+    },
+    {
+        "word":"acknowledge",
+        "desc":"accept or admit the existence or truth of."
+    },
+    {
+        "word":"secret",
+        "desc":"not known or seen or not meant to be known or seen by others."
+    },
+    {
+        "word":"election",
+        "desc":"a formal and organized choice by vote of a person for a political office or other position."
+    },
+    {
+        "word":"beautiful",
+        "desc":"pleasing the senses or mind aesthetically."
+    },
+    {
+        "word":"bureaucracy",
+        "desc":"a system of government in which most of the important decisions are made by state officials rather than by elected representatives."
+    },
+    {
+        "word":"amphibians",
+        "desc":"a cold-blooded vertebrate animal of a class that comprises the frogs, toads, newts, and salamanders. They are distinguished by having an aquatic gill-breathing larval stage followed (typically) by a terrestrial lung-breathing adult stage."
+    },
+    {
+        "word":"nepotism",
+        "desc":"the practice among those with power or influence of favoring relatives or friends, especially by giving them jobs."
+    },
+    {
+        "word":"love",
+        "desc":"an intense feeling of deep affection."
+    },
+    {
+        "word":"javascript",
+        "desc":"an object-oriented computer programming language commonly used to create interactive effects within web browsers."
+    },
+    {
+        "word":"hacktivist",
+        "desc":"a person who gains unauthorized access to computer files or networks in order to further social or political ends."
+    },
+    {
+        "word":"hacker",
+        "desc":"a person who uses computers to gain unauthorized access to data."
+    },
+    {
+        "word":"gluten",
+        "desc":"a substance present in cereal grains, especially wheat, that is responsible for the elastic texture of dough. A mixture of two proteins, it causes illness in people with celiac disease."
+    },
+    {
+        "word":"garlic",
+        "desc":"the plant, closely related to the onion, that produces this bulb."
+    },
+    {
+        "word":"police",
+        "desc":"the civil force of a national or local government, responsible for the prevention and detection of crime and the maintenance of public order."
+    },
+    {
+        "word":"virus",
+        "desc":"an infective agent that typically consists of a nucleic acid molecule in a protein coat, is too small to be seen by light microscopy, and is able to multiply only within the living cells of a host."
+    },
+    {
+        "word":"quarantine",
+        "desc":"a state, period, or place of isolation in which people or animals that have arrived from elsewhere or been exposed to infectious or contagious disease are placed."
+    },
+    {
+        "word":"harassment",
+        "desc":"aggressive pressure or intimidation."
+    },
+    {
+        "word":"leadership",
+        "desc":"the action of leading a group of people or an organization."
+    },
+    {
+        "word":"prejudice",
+        "desc":"preconceived opinion that is not based on reason or actual experience."
+    },
+    {
+        "word":"paradox",
+        "desc":"a seemingly absurd or self-contradictory statement or proposition that when investigated or explained may prove to be well founded or true."
+    },
+    {
+        "word":"parasite",
+        "desc":"an organism that lives in or on an organism of another species (its host) and benefits by deriving nutrients at the other's expense."
+    },
+    {
+        "word":"labour",
+        "desc":"workers, especially manual workers, considered collectively."
+    },
+    {
+        "word":"immune",
+        "desc":"resistant to a particular infection or toxin owing to the presence of specific antibodies or sensitized white blood cells."
+    },
+    {
+        "word":"attack",
+        "desc":"take aggressive action against (a place or enemy forces) with weapons or armed force, typically in a battle or war."
+    },
+    {
+        "word":"defend",
+        "desc":"resist an attack made on (someone or something); protect from harm or danger."
+    },
+    {
+        "word":"throne",
+        "desc":"a ceremonial chair for a sovereign, bishop, or similar figure."
+    },
+    {
+        "word":"curtain",
+        "desc":"a piece of material suspended at the top to form a covering or screen, typically one of a pair at a window."
+    },
+    {
+        "word":"curious",
+        "desc":"eager to know or learn something."
+    },
+    {
+        "word":"culture",
+        "desc":"the arts and other manifestations of human intellectual achievement regarded collectively."
+    },
+    {
+        "word":"unique",
+        "desc":"being the only one of its kind; unlike anything else."
+    },
+    {
+        "word":"compassion",
+        "desc":"sympathetic pity and concern for the sufferings or misfortunes of others."
+    },
+    {
+        "word":"growth",
+        "desc":"the process of increasing in physical size."
+    },
+    {
+        "word":"mindset",
+        "desc":"the established set of attitudes held by someone."
+    }
+]
