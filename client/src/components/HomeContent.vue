@@ -1,13 +1,10 @@
 <template>
   <div class="homePage">
     <img class="imgBackground1" src="https://lh3.googleusercontent.com/proxy/dgFu0Hmroy2uv_h7gGitdlphtCZFEcXAbUkODmbwFnIW2tCxt7BKylAvWmPXVvRIt2A0IC1JpBayiVNyUEYNIcZlPw9A6y0i3YS3NV-FjQh_CupAhvJd3Dfp3O82JNRaC3eZ3hDh">
-    <div class="listPlayer  ">
-      <h3>hallo {{ name }}</h3>
+    <div class="listPlayer">
       <h1>list player :</h1>
-      <p>andi,german,test</p>
       <h3>player: score</h3>
       <h2>timer</h2>
-      <h3>{{ timer }}</h3>
     </div>
 
     <div class="loginBox">
@@ -18,7 +15,7 @@
         <h3>kalimat</h3>
       </div>
       <div>
-        <form class="answerForm" @submit.prevent="changePage">
+        <form class="answerForm">
           <input type="text" placeholder="your answer" name="username" class="answerForm">
           <br><br>
           <input type="submit" class="answerBtn">
@@ -34,52 +31,13 @@ export default {
   name: 'Home',
   data () {
     return {
-      name: localStorage.getItem('username'),
+      name: '',
       message: ''
     }
   },
   computed: {
     quiz () {
       return this.$store.state.quiz
-    },
-    players () {
-      return this.$store.state.players
-    },
-    namaPlayer () {
-      return this.$store.state.nama
-    },
-    timer () {
-      return this.$store.state.timer
-    },
-    isStart () {
-      if (this.$store.state.isStart) {
-        this.start()
-      }
-      return this.$store.state.isStart
-    }
-  },
-  methods: {
-    start () {
-      while (this.$store.state.timer > 0) {
-        setInterval(() => {
-          this.$store.commit('timerDecrement')
-        }, 1000)
-      }
-    },
-    startGame () {
-      this.start()
-      this.$socket.emit('startGame')
-    },
-    resetGame () {
-      this.$socket.emit('resetGame')
-    },
-    changePage () {
-      this.$router.push({ path: '/winner' })
-    }
-  },
-  created () {
-    if (!localStorage.getItem('username')) {
-      this.$router.push({ path: '/login' })
     }
   }
 }
@@ -101,9 +59,17 @@ export default {
   .listPlayer {
      margin-left: -80%;
    }
+  .answerForm {
+    background: #191919;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 5px 5px;
+    margin-left: 30%;
+    margin-right: 30%;
+  }
 
   .answerForm input[type = "text"] {
-    background: black;
+    background: none;
     display: block;
     margin: 250px auto;
     border: 2px solid #3498db;
@@ -122,7 +88,7 @@ export default {
 
   .answerForm input[type = "submit"] {
     border: 0;
-    background: black;
+    background: none;
     display: block;
     margin: -240px auto;
     border: 2px solid #2ecc71;

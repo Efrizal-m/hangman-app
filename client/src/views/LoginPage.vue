@@ -29,14 +29,12 @@ export default {
   created () {
     if (localStorage.getItem('username')) {
       this.$router.push({ path: '/' })
+
     }
   }
 }
 </script>
 
-<style>
-
-</style>
 
 <style>
   .box {
