@@ -4,37 +4,6 @@
   </div>
 </template>
 
-<script>
-
-export default {
-  methods: {
-    startQuiz () {
-      this.$socket.emit('startGame')
-    },
-    daftar () {
-      this.$socket.emit('register', this.nama)
-      this.nama = ''
-    },
-    reset () {
-      this.$socket.emit('resetGame')
-    }
-  },
-  computed: {
-    quiz () {
-      return this.$store.state.quiz
-    },
-    players () {
-      return this.$store.state.players
-    }
-  },
-  data () {
-    return {
-      nama: ''
-    }
-  }
-}
-</script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
