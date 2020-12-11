@@ -14,6 +14,7 @@ function fetchQuiz(){
     return out
 }
 
+
 function addAnswer(arr){
     let randomSum = Math.ceil(Math.random()*2)
     arr.forEach(el => {
@@ -48,7 +49,8 @@ io.on('connection', (client) => {
         io.emit('resetGame', quiz)
     })
     client.on('startGame', _=>{
-        quiz = addAnswer(fetchQuiz())
+        quiz = fetchQuiz()
+        quiz[0].shown = WordQuiz(quiz[0].word)
         io.emit('startGame', quiz)
     })
     client.on('startRound', _=>{

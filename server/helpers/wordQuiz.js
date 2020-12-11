@@ -25,6 +25,9 @@ function WordQuiz (word) {
     for (let i = 0; i < idx.length; i++) {
         character.forEach((c, j) => { if (j == idx[i]) character[j] = ''; });        
     }
+    character = character.filter(el => {
+        if(el != '') return el
+    })
     return character
 }
 
