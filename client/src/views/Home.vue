@@ -17,7 +17,7 @@
       <div class="questionBox">
         <h1>`description: {{ quiz[0].desc }}`</h1>
         <br><br><br>
-        <h3>kalimat:{{ quiz[0].test }} </h3>
+        <h3>WORDS:    {{ quiz[0].test }} </h3>
       </div>
       <div>
         <form class="answerForm" @submit.prevent="cekJawaban">
@@ -56,10 +56,15 @@ export default {
       console.log(out, '<<<<dari quiz')
       let a = ''
       for (let i = 0; i < out[0].word.length; i++) {
-        if (out[0].word[i] !== out[0].shown) {
-          a += '*'
-        } else {
+        // if (out[0].word[i] !== out[0].shown[0] || out[0].word[i] !== out[0].shown[1] || out[0].word[i] !== out[0].shown[2]) {
+        //   a += '*'
+        // } else {
+        //   a += out[0].word[i]
+        // }
+        if (out[0].word[i] === out[0].shown[0] || out[0].word[i] === out[0].shown[1] || out[0].word[i] === out[0].shown[2]) {
           a += out[0].word[i]
+        } else {
+          a += '*'
         }
       }
       out[0].test = a
