@@ -1,15 +1,10 @@
 <template>
   <div class="homePage">
     <img class="imgBackground1" src="https://lh3.googleusercontent.com/proxy/dgFu0Hmroy2uv_h7gGitdlphtCZFEcXAbUkODmbwFnIW2tCxt7BKylAvWmPXVvRIt2A0IC1JpBayiVNyUEYNIcZlPw9A6y0i3YS3NV-FjQh_CupAhvJd3Dfp3O82JNRaC3eZ3hDh">
-    <div class="listPlayer  ">
-      <button @click="startGame">start game</button>
-      <button @click="resetGame">reset game</button>
-      <p>hi {{ namaPlayer }}</p>
+    <div class="listPlayer">
       <h1>list player :</h1>
-      <h3>player : score</h3>
-      <h3 v-for="el in players" :key="el.nama">{{ el.nama }}: {{ el.score }}</h3>
+      <h3>player: score</h3>
       <h2>timer</h2>
-      <h3>{{ timer }}</h3>
     </div>
 
     <div class="loginBox">
@@ -43,37 +38,6 @@ export default {
   computed: {
     quiz () {
       return this.$store.state.quiz
-    },
-    players () {
-      return this.$store.state.players
-    },
-    namaPlayer () {
-      return this.$store.state.nama
-    },
-    timer () {
-      return this.$store.state.timer
-    },
-    isStart () {
-      if (this.$store.state.isStart) {
-        this.start()
-      }
-      return this.$store.state.isStart
-    }
-  },
-  methods: {
-    start () {
-      while (this.$store.state.timer > 0) {
-        setInterval(() => {
-          this.$store.commit('timerDecrement')
-        }, 1000)
-      }
-    },
-    startGame () {
-      this.start()
-      this.$socket.emit('startGame')
-    },
-    resetGame () {
-      this.$socket.emit('resetGame')
     }
   }
 }

@@ -1,18 +1,36 @@
 <template>
   <div class="loginPage">
     <div class="loginForm">
-      <form align="center" class="box">
+      <form align="center" class="box" @submit.prevent="register">
         <img src="https://lh3.googleusercontent.com/proxy/EmS_ZcMxk5kkZQsYL3QbEopjbj6bvl3vq0b5gk8KBFM2tGnYnoMSB_brVnzEoBuYnpgVXWOR0W_RG2XstyBKy_NaELWiAmxV5Oe97ZIC8SbrfHS-rj0faes" alt="">
         <h1>HELLO</h1>
         <div class="input-username">
-          <input type="text" placeholder="USERNAME" name="username" class="usernameForm">
+          <input type="text" placeholder="USERNAME" class="usernameForm" v-model="nama">
           <br><br>
-          <input type="submit" name="" id="" class="loginBtn">
+          <input type="submit" class="loginBtn">
         </div>
       </form>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'login',
+  data () {
+    return {
+      nama: ''
+    }
+  },
+  methods: {
+    register () {
+      this.$store.commit('setName', this.nama)
+      this.$socket.emit('register', this.nama)
+      this.$router.push('/')
+    }
+  }
+}
+</script>
 
 <style>
   .box {

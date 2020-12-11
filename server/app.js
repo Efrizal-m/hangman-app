@@ -2,6 +2,7 @@ const app = require('express')();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 const data = require('./data/data.json')
+const PORT = 3000
 
 function fetchQuiz(){
     let out = []
@@ -13,8 +14,10 @@ function fetchQuiz(){
 }
 
 function addAnswer(arr){
+    let randomSum = Math.ceil(Math.random()*2)
     arr.forEach(el => {
         let letters = []
+        let shown = []
         for(let i = 0; i < el.word.length; i++){
             if(letters.indexOf(el.word[i]) < 0) letters.push(el.word[i])
         }
@@ -28,6 +31,7 @@ let quiz = []
 let allClient = []
 
 io.on('connection', (client) => {
+    io.emit('player', players)
     client.on('register', payload => {
         client.pengenal = payload
         allClient.push(client)
@@ -61,8 +65,13 @@ io.on('connection', (client) => {
         let i = allClient.indexOf(client)
         let j = players.indexOf(client.pengenal)
         allClient.splice(i,1)
-        players.splice(j,1)
+        if(j > -1){
+            players.splice(j,1)
+        }
         io.emit('player', players)
     })
 });
-server.listen(3000);
+
+server.listen(PORT, ()=>{
+    console.log(`app running on port ${PORT}`);
+})
